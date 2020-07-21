@@ -1,0 +1,34 @@
+---
+tags: [ networking ]
+---
+
+# List rules by spec
+iptables -S
+
+# List rules, pretty with line numbers
+iptables -L -n --line-numbers
+
+# Allow traffic with protocol to port
+iptables -A INPUT -p tcp --dport 22 -j ACCEPT
+
+# Insert rule
+iptables -I INPUT 3 -p tcp --dport 22 -j ACCEPT
+
+# Delete rule
+iptables -D INPUT 3
+iptables -D INPUT -p tcp --dport 22 -j ACCEPT
+
+# Allow packets from established connections
+iptables -A INPUT -m conntrack --ctstate RELATED,ESTABLISHED -j ACCEPT
+
+# Allow loopback traffic
+iptables -A INPUT -i lo -j ACCEPT
+
+# Add a comment to a rule
+iptables ... -m comment --comment "This rule is here for this reason"
+
+# Persist rules (Archlinux)
+sudo iptables-save | sudo tee /etc/iptables/iptables.rules
+sudo ip6tables-save | sudo tee /etc/iptables/ip6tables.rules
+sudo systemctl enable iptables
+sudo systemctl enable ip6tables
