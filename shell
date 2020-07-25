@@ -1,0 +1,29 @@
+# Loop through files in directory
+for f in *; do
+  echo $f;
+done
+
+# Check if file does not exist
+if [ ! -f foo.txt ]; then
+    echo "File not found!"
+fi
+
+# Tests
+-d  # exists and is directory
+-f  # exists and is file
+-e  # exists (directory or file)
+-n  # string is empty
+-z  # string is nonempty
+
+# Boolean
+ =  # strings equal
+!=  # strings not equal
+ !  # logical not
+-o  # logical or
+-a  # logical and
+
+# numeric comparisons
+-eq, -ne, -gt, -ge, -lt, -le
+
+# Documentation for `test`
+https://pubs.opengroup.org/onlinepubs/9699919799/utilities/test.html
