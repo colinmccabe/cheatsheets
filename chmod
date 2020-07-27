@@ -1,0 +1,11 @@
+# Set permissions equal to
+chmod u=rwx myscript.sh
+
+# Set multiple permissions at once
+chmod u=rwx,go=r myscript.sh
+
+# Like verbose but report only when a change is made
+-c, --changes
+
+# Output a diagnostic for every file processed
+-v, --verbose
