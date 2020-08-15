@@ -1,0 +1,5 @@
+# Upgrade packages
+pip-compile --generate-hashes --upgrade requirements.in -o requirements.txt
+
+# Upgrade specific package
+-P requests
