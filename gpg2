@@ -1,0 +1,6 @@
+# Receive key
+gpg2 --keyserver hkps://keyserver.ubuntu.com --recv-keys <key>
+
+# Verify data
+gpg2 --verify foo.gpg
+gpg2 --verify foo.gpg foo
