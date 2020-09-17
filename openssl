@@ -1,0 +1,9 @@
+# Print certificate
+openssl x509 -in cert.pem -noout -text
+
+# Verify certificate through intermediate
+openssl verify -untrusted intermediate.pem leaf.pem
+
+# Verify that cert was signed with private key
+openssl x509 -in cert.pem -noout -modulus | shasum
+openssl rsa -in key.pem -noout -modulus | shasum
