@@ -1,0 +1,13 @@
+# Load module and capture ID
+set PULSE_MODULE_ID (pactl load-module ...)
+
+# Unload module
+pactl unload-module $PULSE_MODULE_ID
+
+# Loop input back to output
+pactl load-module module-loopback
+
+# Create socket (mountable in container)
+pactl load-module module-native-protocol-unix \
+  socket=(pwd)/pulseaudio.socket \
+  auth-anonymous=true
