@@ -1,0 +1,14 @@
+# Output filename
+# https://github.com/ytdl-org/youtube-dl#output-template
+-o '%(title)s-%(id)s.%(ext)s'
+
+# Download mp3 audio
+-x --audio-format=mp3 --audio-quality=128k
+
+# Get formats
+# https://github.com/ytdl-org/youtube-dl#format-selection
+-F
+
+# Merge video-only and audio-only formats
+# Format is one of webm, mp4, mkv, ogg, flv
+-f '137+251' --merge-output-format webm
