@@ -1,0 +1,11 @@
+---
+syntax: yaml
+---
+
+do :diffget  # Get change
+dp :diffput  # Put change
+]c           # Next change
+[c           # Prev change
+C-W C-W      # Toggle pane
+
+# More: https://devhints.io/vim-diff
