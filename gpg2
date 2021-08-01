@@ -1,6 +1,15 @@
 # Receive key
-gpg2 --keyserver hkps://keyserver.ubuntu.com --recv-keys <key>
+gpg2 --keyserver hkps://keys.openpgp.org --recv-keys <key>
+
+# Keyservers
+hkps://keys.openpgp.org
+hkps://keyserver.ubuntu.com
 
 # Verify data
 gpg2 --verify foo.gpg
 gpg2 --verify foo.gpg foo
+
+# Manipulate keys
+gpg2 --list-keys
+gpg2 --edit-key name@example.com
+gpg2 --delete-key 61B7B526D98F0353
